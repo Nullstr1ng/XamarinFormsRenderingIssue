@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       x:Class="AppShellBug.AppShell"
+       Shell.FlyoutBehavior="Disabled"
+       
+       xmlns:pages="clr-namespace:AppShellBug.Pages"
+       TitleColor="White"
+       UnselectedColor="White"
+       
+       BackgroundColor="{StaticResource DefaultButtonColor}"
+       >
+    
+    <!--
+    
+    Bottom Navigation Bar rendering issue
+    
+    Change BackgroundColor to
+    BackgroundColor="{StaticResource DefaultButtonColor}"
+    the rendering issue appears
+    
+    if used any colors
+    i.e. BackgroundColor="#FF007ACC"
+    or using custom style
+    i.e. Style="{StaticResource ShellStyle}"
+    It renders just fine.
+    
+    So it appears that the rendering issue only occur when setting a color
+    via "StaticResource"
+    
+    -->
+
+    <ShellItem>
+        <ShellSection Title="Home" Icon="dashboard.png" >
+            <ShellContent ContentTemplate="{DataTemplate pages:Page_One}" />
+        </ShellSection>
+
+        <ShellSection Title="Courses" Icon="courses.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Page_Two}" />
+        </ShellSection>
+
+        <ShellSection Title="Resources" Icon="otherresources.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Page_Three}" />
+        </ShellSection>
+    </ShellItem>
+</Shell>
