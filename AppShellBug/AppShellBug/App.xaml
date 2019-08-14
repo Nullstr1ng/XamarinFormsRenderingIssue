@@ -7,10 +7,18 @@
              x:Class="AppShellBug.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!--setting BackgroundColor in Shell using StaticResource causing some rendering isssue
+            on bottom navigation bar-->
             <Color x:Key="DefaultButtonColor">#FFFFA925</Color>
 
+            <!--this works-->
             <Style TargetType="Shell" x:Key="ShellStyle">
                 <Setter Property="BackgroundColor" Value="#FF9B60E1" />
+            </Style>
+
+            <!--this works too-->
+            <Style TargetType="Shell" x:Key="ShellStyle2">
+                <Setter Property="BackgroundColor" Value="{StaticResource DefaultButtonColor}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

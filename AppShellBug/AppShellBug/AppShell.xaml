@@ -33,16 +33,32 @@
     
     -->
 
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Home" TargetType="Element">
+                <!--<Setter Property="Shell.BackgroundColor" Value="Red" />-->
+            </Style>
+
+            <Style x:Key="Courses" TargetType="Element">
+                <!--<Setter Property="Shell.BackgroundColor" Value="Green" />-->
+            </Style>
+
+            <Style x:Key="Resources" TargetType="Element">
+                <!--<Setter Property="Shell.BackgroundColor" Value="Blue" />-->
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
     <ShellItem>
         <ShellSection Title="Home" Icon="dashboard.png" >
             <ShellContent ContentTemplate="{DataTemplate pages:Page_One}" />
         </ShellSection>
 
-        <ShellSection Title="Courses" Icon="courses.png">
+        <ShellSection Title="Courses" Icon="courses.png" Style="{StaticResource Courses}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page_Two}" />
         </ShellSection>
 
-        <ShellSection Title="Resources" Icon="otherresources.png">
+        <ShellSection Title="Resources" Icon="otherresources.png" Style="{StaticResource Resources}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page_Three}" />
         </ShellSection>
     </ShellItem>
